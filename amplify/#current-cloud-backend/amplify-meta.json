@@ -1,0 +1,90 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-exp-staging-07d18-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730335464641:role/amplify-exp-staging-07d18-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730335464641:role/amplify-exp-staging-07d18-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-exp-staging-07d18-deployment",
+      "UnauthRoleName": "amplify-exp-staging-07d18-unauthRole",
+      "StackName": "amplify-exp-staging-07d18",
+      "StackId": "arn:aws:cloudformation:ap-south-1:730335464641:stack/amplify-exp-staging-07d18/60cbf980-53d3-11ef-ba52-02f05e83ca29",
+      "AmplifyAppId": "d2hqxb9wjadkxe"
+    }
+  },
+  "auth": {
+    "exp": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 6,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE"
+          ]
+        },
+        "signupAttributes": [
+          "EMAIL",
+          "NAME"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "output": {
+        "UserPoolId": "ap-south-1_dlRwY3rJ5",
+        "AppClientIDWeb": "7n1bct098gmgj1pvnod9rjf865",
+        "AppClientID": "1gta6cb7qe2b90t49f4j5giruj",
+        "IdentityPoolId": "ap-south-1:784bfcc0-aafb-481e-8eff-2e6c1f7775a3",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-south-1:730335464641:userpool/ap-south-1_dlRwY3rJ5",
+        "IdentityPoolName": "testAuthIdentityPool__staging",
+        "UserPoolName": "exp"
+      },
+      "lastPushTimeStamp": "2024-09-28T04:56:00.736Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-exp-staging-07d18-deployment/amplify-cfn-templates/auth/exp-cloudformation-template.json",
+        "logicalId": "authexp"
+      }
+    }
+  },
+  "api": {
+    "exp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "2oijdbax7vfhpigqxmur7tcxx4",
+        "GraphQLAPIEndpointOutput": "https://ov3iio433ba53lepwtm5hps23i.appsync-api.ap-south-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-rwc337umyvdihps7bixne2a574"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-exp-staging-07d18-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiexp"
+      },
+      "lastPushTimeStamp": "2024-09-28T04:56:01.635Z",
+      "lastPushDirHash": "zxcUx+gn/jM0prspE6O6ZHeXe4g="
+    }
+  }
+}
